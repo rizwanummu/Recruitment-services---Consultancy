@@ -38,7 +38,7 @@ body {
 }
 
 nav{
-    width: 113%;
+    width: 153%;
    
     background: #000;
     border:2px solid rgb(59, 211, 59);
@@ -196,7 +196,7 @@ nav{
 }
 .content img{
     
-    width: 110%;
+    width: 150%;
     height: 631px;
     margin-top:0px;
     right: 0;
