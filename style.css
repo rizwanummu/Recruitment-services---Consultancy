@@ -21,7 +21,8 @@ body {
     }
 
 } */
-.text-overlay {
+
+/* .text-overlay {
    
     
     left: 10%;
@@ -29,33 +30,34 @@ body {
     color: white;
     font-size: 40px;
     font-weight: bold;
-    /* text-align: center; */
+   
     width: 220px;
     margin-left: 80px;
    
-    /* padding: 10px 20px; */
+    
     border-radius: 5px;
-}
+} */
 
 nav{
-    width: 153%;
+    width: 100%;
    
     background: #000;
     border:2px solid rgb(59, 211, 59);
     height:72px;
     border: 2px solid rgb(8, 8, 8);
-   padding: 12px 56px;
-   position: sticky;
+   /* padding: 12px 56px; */
+   position: fixed;
    font-size: medium;
+   padding-top: 17px;
   
    align-items: center;
    text-align: center;
-   overflow: hidden;
+   /* overflow: hidden; */
  
-   /* z-index: -1; */
+   
   
 }
-@media (min-width: 800px) and (max-width: 1768px) {
+/* @media (min-width: 800px) and (max-width: 1768px) {
     nav{
         width: 100vw;
    
@@ -70,7 +72,7 @@ nav{
        align-items: center;
        text-align: center;
     }
-}
+} */
 
     
 .headerelements{
@@ -88,7 +90,7 @@ nav{
     height:25px;
     width: 124px;
     /* position: absolute; */
-    margin-top: 15px;
+    margin-top: 17px;
    
    
     
@@ -98,8 +100,8 @@ nav{
    
     display: flex;
     gap: 1.5rem;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
+    /* padding-left: 3.5rem;
+    padding-right: 3.5rem; */
     justify-content: center;
     text-align: center;
     align-items: center;
@@ -196,11 +198,11 @@ nav{
 }
 .content img{
     
-    width: 150%;
+    width: 100%;
     height: 631px;
-    margin-top:0px;
+    margin-top:70px;
     right: 0;
-    position: relative;
+    position: fixed;
    /* position: static; */
     
 }
