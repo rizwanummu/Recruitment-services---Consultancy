@@ -15,6 +15,12 @@ body {
     
     
 }
+/* @media (min-width: 800px) and (max-width: 1768px) {
+    body {
+
+    }
+
+} */
 .text-overlay {
    
     
@@ -32,18 +38,19 @@ body {
 }
 
 nav{
-    width: 100vw;
+    width: 113%;
    
     background: #000;
     border:2px solid rgb(59, 211, 59);
     height:72px;
     border: 2px solid rgb(8, 8, 8);
    padding: 12px 56px;
-   position: absolute;
+   position: sticky;
    font-size: medium;
   
    align-items: center;
    text-align: center;
+   overflow: hidden;
  
    /* z-index: -1; */
   
@@ -57,7 +64,7 @@ nav{
         height:72px;
         border: 2px solid rgb(8, 8, 8);
        padding: 12px 56px;
-       position: absolute;
+       position: sticky;
        font-size: medium;
       
        align-items: center;
@@ -80,7 +87,7 @@ nav{
 .headerelements img{
     height:25px;
     width: 124px;
-    position: absolute;
+    /* position: absolute; */
     margin-top: 15px;
    
    
@@ -97,7 +104,7 @@ nav{
     text-align: center;
     align-items: center;
     margin-left: 90px;
-    margin-top: 20px;
+   
 }
 .headerelements li a{
    color: rgb(248, 243, 243);
@@ -189,10 +196,11 @@ nav{
 }
 .content img{
     
-    width: 100vw;
+    width: 110%;
     height: 631px;
-    margin-top: 70px;
+    margin-top:0px;
     right: 0;
+    position: relative;
    /* position: static; */
     
 }
