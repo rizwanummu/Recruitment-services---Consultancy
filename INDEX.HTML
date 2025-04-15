@@ -338,7 +338,7 @@ background-color: black;
     .resource-container {
       display: flex;
       justify-content: space-evenly;
-      flex-wrap: wrap;
+      /* flex-wrap: wrap; */
       gap: 30px;
       padding: 0 20px;
     }
@@ -492,22 +492,48 @@ background-color: black;
       flex-direction: row;
       max-width: 1200px;
       margin: auto;
-      min-height: 100vh;
+      min-height: 30vh;
     }
-
+    @media (min-width: 0px) and (max-width: 600px) {
+      .faq-container {
+        display: flex;
+      flex-direction: row;
+      max-width: 1200px;
+      margin: auto;
+      min-height:30vh;
+    }
     .faq-left {
       flex: 1;
       /* background-color: #f9f9f9; */
-      padding: 2rem;
+      padding: 1rem;
       position: sticky;
       top: 0;
-      height: 100vh;
+      height: 30vh;
       overflow-y: auto;
     }
 
     .faq-right {
       flex: 2;
-      padding: 2rem;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+
+    }
+
+    .faq-left {
+      flex: 1;
+      /* background-color: #f9f9f9; */
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      height: 30vh;
+      overflow-y: auto;
+    }
+
+    .faq-right {
+      flex: 2;
+      padding: 1rem;
       overflow-y: auto;
     }
 
@@ -625,7 +651,7 @@ background-color: black;
       box-sizing: border-box;
       transition: box-shadow 0.3s ease;
       max-width: 300px;
-      min-width: 260px;
+     
     }
 
     .box:hover {
