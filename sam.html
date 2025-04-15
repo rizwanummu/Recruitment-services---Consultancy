@@ -1,39 +1,1162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text on Background Image</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        .background {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: url('./IMAGES/bgimage.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        
-        
-        .text {
-            position: relative;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Strategic IT Consulting Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      width: 100%;
+      height: 92px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      padding: 0 100px;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links a {
+      color: #f8f3f3;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-header {
+      background-color: rgb(46, 110, 223);
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn-header:hover {
+      background-color: #0056b3;
+    }
+
+    .custom-button {
+      padding: 10px 16px;
+      font-size: 16px;
+      background-color: black;
+      color: white;
+      border: 1px solid #100f0f;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hero {
+      width: 100%;
+      height: 100vh;
+      margin-top: 92px;
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 100px;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 52px;
+      font-weight: bold;
+      max-width: 500px;
+    }
+
+    .img-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #0056b3;
+      color: white;
+      border: 1px solid #100f0f;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-size: 16px;
+    }
+
+    .img-btn:hover {
+      background-color: #0574ea;
+    }
+
+    .leading {
+      font-family: Arial, sans-serif;
+      padding: 70px 20px;
+      background-color: rgb(233 243 255);
+    }
+
+    h2 {
+      color: #111;
+      font-size: 26px;
+      font-weight: bold;
+      margin-left: 60px;
+      margin-bottom: 40px;
+    }
+
+    .logo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      row-gap: 40px;
+      margin-left: 38px;
+    }
+
+    .logo-grid img {
+      max-height: 40px;
+      object-fit: contain;
+      margin-left: 20px;
+      filter: grayscale(100%);
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo-grid img:hover {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-heading {
+      background-color: #ffffff;
+      padding: 20px 90px;
+      font-size: 34px;
+      font-weight: bold;
+      color: #131313;
+      /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+      margin-top: 60px;
+    }
+
+    .secondcontent {
+      display: flex;
+      position: relative;
+      min-height: 100vh;
+      background-color: #fdfdfd;
+    }
+
+    .box11 {
+      position: sticky;
+      top: 100px;
+      width: 20%;
+      background-color: #fff;
+      padding: 20px;
+      /* box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.1); */
+      height: fit-content;
+      align-self: flex-start;
+      margin-left: 100px;
+    }
+
+    .box11 ul {
+      padding-left: 0;
+      list-style: none;
+      margin-top: 40px;
+    }
+
+    .box11 li {
+      margin-top: 24px;
+      color: rgb(99, 97, 97);
+      cursor: pointer;
+      transition: background-color 0.3s;
+      padding: 8px;
+    }
+
+    .box11 li a {
+      text-decoration: none;
+      color: #111111;
+    }
+
+    .box11 li:hover {
+      background-color: rgb(233 243 255);
+      color: #333;
+    }
+
+    .box22 {
+      width: 80%;
+      height: 100%;
+      overflow-y: auto;
+      padding: 40px;
+    }
+
+    .box22 h1 {
+      font-size: 27px;
+      margin-top: 30px;
+    }
+
+    .box22 p {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .box22 ul {
+      font-size: 18px;
+      margin-left: 20px;
+      color: #101010;
+      list-style-type: disc;
+      margin-bottom: 20px;
+    }
+
+    .box22 ul li {
+      margin-bottom: 15px;
+      font-size: 16px;
+      margin-top: 7px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .leading h2 {
+        margin-left: 20px;
+        font-size: 20px;
+      }
+
+      .logo-grid {
+        margin: 0 auto;
+        justify-content: center;
+      }
+
+      .secondcontent {
+        flex-direction: column;
+      }
+
+      .box11 {
+        width: 100%;
+        position: relative;
+        top: auto;
+        box-shadow: none;
+      }
+
+      .box22 {
+        width: 100%;
+      }
+    }
+    .getstarted {
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 24px; 
+    padding: 64px 20px; 
+    
+   
+    color: rgb(219, 223, 223);
+border-color: rgb(10, 10, 10);
+background-color: black;
+    
+    @media (min-width: 768px) {
+        padding: 112px 64px; 
+    }
+}
+#getstarted{
+    margin-left: 10px;
+}
+.buttongetstarted{
+    background-color: rgb(46 110 223 );
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left:40px
+}
+.buttongetstarted:hover {
+    background-color: #0056b3;
+}
+.featured-resources {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #fff;
+    }
+
+    .featured-resources h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #000;
+    }
+
+    .resource-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .resource-card {
+      background: #fff;
+      border: 2px solid #f2f2f2;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      width: 320px;
+      max-width: 100%;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .resource-card:hover {
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .resource-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .resource-card p {
+      font-size: 1.2rem;
+      color: #333;
+      padding: 20px;
+      font-weight: 500;
+    }
+
+    .read-btn {
+      background: none;
+      border: none;
+      color: #000;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .read-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .view-all-wrapper {
+      margin-top: 40px;
+    }
+
+    .view-all-btn {
+      background-color: #000;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .view-all-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 1100px) {
+      .resource-container {
+        justify-content: center;
+      }
+      
+    }
+    .review-container {
+      width: 100%;
+      background-color: rgb(233, 243, 255);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 60px 20px;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .review-heading {
+      max-width: 500px;
+      flex: 1;
+    }
+
+    .review-heading h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .review-content {
+      max-width: 600px;
+      flex: 1;
+    }
+
+    .review-content p {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .view-all-btn {
+      background-color: #060606;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .view-all-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    }
+
+    @media (max-width: 768px) {
+      .review-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .review-heading,
+      .review-content {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+
+      .review-heading h1 {
+        font-size: 2rem;
+      }
+
+      .review-content p {
+        font-size: 1.1rem;
+      }
+    }
+    .faq-container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1200px;
+      margin: auto;
+      min-height: 100vh;
+    }
+
+    .faq-left {
+      flex: 1;
+      /* background-color: #f9f9f9; */
+      padding: 2rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .faq-right {
+      flex: 2;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .faq-description {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 1rem 0;
+    }
+
+    .faq-question {
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      color: #333;
+      padding-left: 1.2rem;
+    }
+
+    input[type="checkbox"]:checked + label::after {
+      content: "▴";
+    }
+
+    label::after {
+      content: "▾";
+      font-size: 1.2rem;
+      margin-left: auto;
+    }
+
+    input[type="checkbox"]:checked ~ .faq-answer {
+      max-height: 1000px;
+      margin-top: 0.5rem;
+    }
+
+    label {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .faq-container {
+        flex-direction: column;
+      }
+
+      .faq-left {
+        position: relative;
+        height: auto;
+        padding: 1.5rem;
+      }
+
+      .faq-right {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .faq-question {
+        font-size: 1rem;
+      }
+
+      .faq-left,
+      .faq-right {
+        padding: 1rem;
+      }
+    }
+    .Otherservices {
+      background-color: rgb(233 243 255);
+      padding: 50px 20px;
+    }
+
+    .Otherservices h2 {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+
+    .containerservices {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .box {
+      flex: 0 0 calc(25% - 40px);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-sizing: border-box;
+      transition: box-shadow 0.3s ease;
+      max-width: 300px;
+      min-width: 260px;
+    }
+
+    .box:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .box img {
+      width: 85px;
+      height: 85px;
+      border-radius: 30%;
+      border: 16px solid rgb(233 243 255);
+      margin-bottom: 20px;
+    }
+
+    .box h2 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .box p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .box button {
+      padding: 10px 20px;
+      font-size: 15px;
+      background-color: #f8f9fa;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .box button:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .viewallservicesall {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .viewallservicesallbtn {
+      font-size: 20px;
+      border: none;
+      background-color: rgb(233 243 255);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .viewallservicesall i {
+      margin-left: 8px;
+      font-size: 18px;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 1024px) {
+      .box {
+        flex: 0 0 calc(33.33% - 40px);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .box {
+        flex: 0 0 calc(50% - 40px);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .box {
+        flex: 0 0 100%;
+      }
+
+      .Otherservices h2 {
+        font-size: 32px;
+      }
+    }
+    .footer {
+      background-color: #111;
+      padding: 40px 60px;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    h3, h4 {
+      color: #ccc;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      color: grey;
+    }
+
+    ul li {
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .lastfooter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .lastfooter ul {
+      display: flex;
+      gap: 30px;
+      margin: 0;
+    }
+
+    .lastfooter li {
+      font-size: medium;
+      color: #fff;
+    }
+
+    .lastfooter img {
+      width: 50px;
+      height: auto;
+    }
+
+    .iconstyle {
+      display: flex;
+      gap: 10px;
+      font-size: 25px;
+      color: white;
+    }
+
+    .iconstyle a {
+      color: white;
+    }
+
+    .lastpara {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 20px;
+      color: grey;
+      font-size: 14px;
+      padding-right: 20px;
+      text-align: right;
+    }
+
+    .footer-address p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .lastfooter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .lastfooter ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .iconstyle {
+        margin-top: 10px;
+      }
+
+      .lastpara {
+        justify-content: center;
+        text-align: center;
+        padding-right: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="background">
-        <div class="overlay"></div>
-        <div class="text">Your Text Here</div>
+
+  <nav>
+    <div class="logo">
+      <img src="./IMAGES/logo.jpg" alt="logo">
     </div>
+
+    <ul class="nav-links">
+      <li><a href="#">What we do</a> <i class="fa fa-caret-down"></i></li>
+      <li><a href="#">Resources</a> <i class="fa fa-caret-down"></i></li>
+      <li><a href="#">For Talent</a> <i class="fa fa-caret-down"></i></li>
+      <li><a href="#">About Us</a> <i class="fa fa-caret-down"></i></li>
+    </ul>
+
+    <div class="action-buttons">
+      <button class="btn-header">Get Started</button>
+      <button class="custom-button">Login <i class="fa fa-caret-down"></i></button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <img src="./IMAGES/bgimage.jpg" alt="Background Image">
+    <div class="text-overlay">
+      Drive digital transformation with custom Laravel development
+      <br>
+      <button class="img-btn">Talk to an Expert</button>
+    </div>
+  </div>
+
+  <section class="leading">
+    <h2>Leading enterprises, startups, and more have trusted Turing</h2>
+    <div class="logo-grid">
+      <img src="./IMAGES/DELL.svg" alt="Dell" />
+      <img src="./IMAGES/pepsi.svg" alt="Pepsi" />
+      <img src="./IMAGES/volvo.svg" alt="Volvo" />
+      <img src="./IMAGES/disney.svg" alt="Disney+" />
+      <img src="./IMAGES/rivan.svg" alt="Rivian" />
+      <img src="./IMAGES/redit.svg" alt="Reddit" />
+    </div>
+  </section>
+
+  <section class="main-wrapper">
+    <div class="top-heading">Our Laravel Development Service Offerings</div>
+
+    <div class="secondcontent">
+      <div class="box11">
+        <ul>
+          <li><a href="#customWebDevSection">Custom Laravel Web Development</a></li>
+          <li><a href="#crmDevSection">Laravel CRM Development</a></li>
+          <li><a href="#ecommerceDevSection">Laravel E-commerce Development</a></li>
+          <li><a href="#dataMigrationSection">Laravel Data Migration Solution</a></li>
+          <li><a href="#maintenanceSupportSection">Laravel Maintenance and Support</a></li>
+        </ul>
+      </div>
+
+      <div class="box22">
+        <div id="customWebDevSection">
+          <h1>Custom Laravel Web Development</h1>
+          <p>Unlock the power of custom web development to build tailored solutions that meet your specific business needs. Our experienced Laravel developers leverage Laravel's robust features to build custom web applications that enhance your online presence, drive business growth, and unlock new opportunities.<br>
+
+            Our experts work closely with you to understand your requirements and develop solutions that deliver the desired results. Our development team communicates with you and shares updates throughout the development process, ensuring that you are fully informed of your project’s progress. This allows you to provide feedback and make any changes if required.<br>Our custom Laravel web development services include:<br></p>
+          <ul>
+            <li>Web application development</li>
+            <li>RESTful API development</li>
+            <li>Custom CMS development</li>
+            <li>Enterprise web application development</li>
+          </ul>
+        </div>
+
+        <div id="crmDevSection">
+          <h1>Laravel CRM Development</h1>
+          <p>At Turing, we understand the importance of customer relationship management (CRM) in today’s competitive business environment. Hence, we work closely with you to deliver custom CRM solutions that meet your specific requirements and deliver the desired performance and functionality.<br>
+
+            Leveraging Laravel’s modular architecture and off-the-shelf components like authentication, routing, database migrations, and queueing, our experts deliver high-performing, scalable, and secure custom CRM solutions.<br>
+            
+            Our Laravel CRM development services include:<br></p>
+          <ul>
+            <li>Creating custom scalable, robust, and secure CRM solutions</li>
+            <li>Integrating third-party CRM solutions into your business operations</li>
+            <li>Integrating CRM systems with APIs, other software, and third-party systems</li>
+            <li>Customizing your existing CRM solutions</li>
+          </ul>
+        </div>
+
+        <div id="ecommerceDevSection">
+          <h1>Laravel E-commerce Development</h1>
+          <p>Laravel offers numerous benefits, such as its speed, scalability, and user-friendliness which are essential to e-commerce businesses. Our Laravel application development services leverage its robust features, ease of use, and rapid development speed to deliver reliable, high-performance e-commerce applications that help you keep up with the ever-evolving demands of today’s online consumers.<br>
+
+            Our experienced Laravel developers are proficient in the necessary skills to transform your ideas into a fully functional e-commerce platform, equipped with the latest features and functionalities. Our Laravel e-commerce development services include:<br></p>
+          <ul>
+            <li>Developing user-friendly, mobile-responsive, and robust online stores</li>
+            <li>Integrating Laravel e-commerce platform with third-party APIs</li>
+            <li>Migrating your current e-commerce website to Laravel</li>
+            <li>Providing online support and maintenance services</li>
+          </ul>
+        </div>
+
+        <div id="dataMigrationSection">
+          <h1>Laravel Data Migration Solution</h1>
+          <p>Migrating your data to the Laravel platform can be a tedious and complex process, but our team of Laravel experts is here to help. We offer comprehensive Laravel data migration solutions tailored to meet your business requirements. Our team ensures seamless data migration to Laraval with minimal disruption to your day-to-day operations.<br>
+
+            Our Laravel data migration services include:<br></p>
+          <ul>
+            <li>Analyzing your current application to identify challenges</li>
+            <li>Mapping the data tables to Laravel</li>
+            <li>Preparing the data for migration and ensuring data quality</li>
+            <li>Migrating data with minimal disruption</li>
+            <li>Providing ongoing support post-migration</li>
+          </ul>
+        </div>
+
+        <div id="maintenanceSupportSection">
+          <h1>Laravel Maintenance and Support</h1>
+          <p>As a reliable Laravel development services provider, we understand the importance of keeping your Laravel applications up-to-date and running smoothly. That’s why we offer ongoing Laravel support and maintenance services to ensure your applications are up and running and delivering optimal performance.<br>
+
+            We identify and resolve any potential issues before they could affect your business operations. Our dedicated Laravel support team monitors the database, server, and other critical parts of the application to ensure it works smoothly always.<br>
+            
+            Our Laravel support and maintenance services include:<br></p>
+          <ul>
+            <li>Identifying and fixing bugs promptly</li>
+            <li>Optimizing application performance</li>
+            <li>Performing regular backups and restoration</li>
+            <li>Providing regular security updates and patches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <body>
+    <div class="getstarted">
+      <h1>Get started</h1>
+      <p>Connect with one of our experts to discuss your needs and find the perfect solution for you</p>
+      <button class="buttongetstarted">Talk to an expert</button>
+  </div>
+  
+  <section class="featured-resources">
+    <h1>Featured Resources</h1>
+
+    <div class="resource-container">
+      <div class="resource-card">
+        <img src="./IMAGES/feature1.jpg" alt="Image 1" />
+        <p>A top car manufacturer makes preordering painless with new app</p>
+        <button class="read-btn">Read →</button>
+      </div>
+
+      <div class="resource-card">
+        <img src="./IMAGES/feature2.jpg" alt="Image 2" />
+        <p>An AI marketplace for supply chain optimization and excellence</p>
+        <button class="read-btn">Read →</button>
+      </div>
+
+      <div class="resource-card">
+        <img src="./IMAGES/feature3.jpg" alt="Image 3" />
+        <p>A large organization finds lower compute spend from new cloud foundation</p>
+        <button class="read-btn">Read →</button>
+      </div>
+    </div>
+
+    <div class="view-all-wrapper">
+      <button class="view-all-btn">View All</button>
+    </div>
+  </section>
+  
+  <section class="review-container">
+    <div class="review-heading">
+      <h1>See what our clients have to say</h1>
+    </div>
+    <div class="review-content">
+      <p>View testimonials and reviews from our global clients who have accelerated their innovation with Turing.</p>
+      <button class="view-all-btn">See Reviews</button>
+    </div>
+  </section>
+  <div class="faq-container">
+    <!-- Left Box -->
+    <div class="faq-left">
+      <h1>Frequently asked questions</h1>
+      <p class="faq-description">Find answers to common questions about training and enhancing high-quality LLMs.</p>
+    </div>
+
+    <!-- Right Box -->
+    <div class="faq-right">
+      <div class="faq-item">
+        <input type="checkbox" id="faq1">
+        <label class="faq-question" for="faq1">What is Laravel and why is it used?</label>
+        <div class="faq-answer">Laravel is a powerful PHP framework used to build web applications and APIs. It has important features like MVC architecture support, routing, database migration system, dynamic engine, robust security, and many others to build high-performance, reliable, scalable, and secure web apps at scale.</div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq2">
+        <label class="faq-question" for="faq2">How long does it take to create a website with Laravel?</label>
+        <div class="faq-answer">The time required to build a website using Laravel depends on various factors like the complexity of the project, design requirements, required features, the development team’s expertise, etc. Usually, an experienced Laravel developer will require two to four weeks to develop a basic website. However, if you require advanced functionalities such as custom integrations and data visualization, it will increase the development timeline.</div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq3">
+        <label class="faq-question" for="faq3">Is Laravel development faster than regular PHP?</label>
+        <div class="faq-answer">Yes, Laravel development is usually faster than regular PHP development because it offers many pre-built tools and its syntax and structure are more streamlined than traditional PHP code. It saves a significant amount of time spent on repetitive tasks, providing a faster time to market and a better ROI.</div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq4">
+        <label class="faq-question" for="faq4">How do I choose a reliable Laravel Development company?</label>
+        <div class="faq-answer">
+          Choosing the right Laravel web development company for your web development project can be challenging. You need to consider a few factors, such as:
+          <br><br>
+          <strong>Experience:</strong> Check the company's track record in Laravel development.<br>
+          <strong>Developers' skills:</strong> Look for expertise in web design, development, testing, and deployment.<br>
+          <strong>Customization:</strong> Choose a company offering tailored solutions for your business.<br>
+          <strong>Timelines:</strong> Make sure they can deliver on time.<br>
+          <strong>Customer reviews:</strong> Check reviews to gauge service quality.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <input type="checkbox" id="faq5">
+        <label class="faq-question" for="faq5">What kind of Laravel development services does Turing offer?</label>
+        <div class="faq-answer">Turing offers a wide range of Laravel development services that are personalized to our client’s specific business goals. Our services include Laravel web application development, Laravel e-commerce development, Laravel migration, API development and integration, and more.</div>
+      </div>
+    </div>
+  </div>
+  <div class="Otherservices">
+    <h2>Other services</h2>
+    <div class="containerservices">
+      <div class="box">
+        <img src="./IMAGES/ser2.jpg" alt="Java Development">
+        <h2>Java software development</h2>
+        <p>Scale your app's performance with cross-platform solutions</p>
+        <button class="btnservice">Learn more →</button>
+      </div>
+      <div class="box">
+        <img src="./IMAGES/ser1.jpg" alt="Kafka">
+        <h2>Kafka</h2>
+        <p>Transform your data into actionable business intelligence</p>
+        <button class="btnservice">Learn more →</button>
+      </div>
+      <div class="box">
+        <img src="./IMAGES/ser1.jpg" alt="Laravel">
+        <h2>Laravel development</h2>
+        <p>Innovate your digital strategy with transformative web solutions</p>
+        <button class="btnservice">Learn more →</button>
+      </div>
+      <div class="box">
+        <img src="./IMAGES/ser1.jpg" alt="LLM Training">
+        <h2>LLM Training & Development</h2>
+        <p>Train the highest-quality LLMs</p>
+        <button class="btnservice">Learn more →</button>
+      </div>
+    </div>
+
+    <div class="viewallservicesall">
+      <button class="viewallservicesallbtn">View all services</button>
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>TURING</h3>
+      </div>
+      <div class="footer-column">
+        <h4>AI & AGI solutions</h4>
+        <ul>
+          <li>LLM training</li>
+          <li>Generative AI</li>
+          <li>AI/Data</li>
+          <li>Custom engineering</li>
+          <li>All solutions →</li>
+        </ul>
+        <h4>On-demand talent</h4>
+        <ul>
+          <li>Technical professionals and teams</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>For talent</h4>
+        <ul>
+          <li>How to get hired</li>
+          <li>Developer reviews</li>
+          <li>Talent resources</li>
+          <li>Tech interview questions</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li>Blog</li>
+          <li>Case studies</li>
+          <li>Use cases</li>
+          <li>More resources →</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li>About</li>
+          <li>Press</li>
+          <li>Turing careers</li>
+        </ul>
+        <h4>Connect</h4>
+        <ul>
+          <li>Contact us</li>
+          <li>Help center</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr style="margin-top: 30px; border-color: #333;" />
+
+    <div class="lastfooter">
+      <img src="./IMAGES/footerlogo.jpg" alt="footerlogo" />
+      <ul>
+        <li>Sitemap</li>
+        <li>Terms of service</li>
+        <li>Privacy policy</li>
+        <li>Privacy settings</li>
+      </ul>
+       <div class="iconstyle">
+        <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+      </div>
+    </div>
+
+    <div class="lastpara">
+      <div class="footer-address">
+        <p>1900 Embarcadero Road Palo Alto, CA, 94303</p>
+        <p>© 2025 Turing</p>
+      </div>
+    </div>
+  </footer>
+
+ 
+  
+  
 </body>
+
 </html>
